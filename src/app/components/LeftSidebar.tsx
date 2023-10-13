@@ -50,7 +50,7 @@ const LeftSidebar = () => {
             </Link>
           ))
         }
-        <button className="w-full rounded-full bg-primary p-4 m-4 text-2xl text-center hover:bg-opacity-70 transition duration-200">
+        <button className="w-full rounded-full bg-primary p-4 text-2xl text-center hover:bg-opacity-70 transition duration-200">
           Twitter
         </button>
       </div>
