@@ -5,11 +5,10 @@ import Main from './components/Main'
 const Home = () => {
   return (
     <div className="w-full h-full flex justify-center items-center relative bg-black">
-      <div className="max-w-[1150px] w-full h-full flex relative" >
-        {/* Left sidebar / header */}
+      <div className="max-w-[1200px] w-full h-full flex relative" >
         <LeftSidebar />
         <Main />
-        <section className=" sticky top-2 w-[275px] mt-2 flex flex-col items-stretch h-screen px-4">
+        <section className=" w-[325px] sticky top-2 right-0 overflow-scroll mt-2 flex flex-col items-stretch h-screen px-4">
           <div>
             <div className="relative w-full h-full group">
               <input
@@ -22,8 +21,46 @@ const Home = () => {
               </label>
             </div>
           </div>
-          <div></div>
-          <div></div>
+          <div className="flex flex-col rounded-xl bg-neutral-900 my-4 ">
+            <h3 className="font-bold text-xl my-2 px-4">What&apos;s happening</h3>
+            <div>
+              {
+                Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="hover:bg-white/10 p-4 rounded-xl transition durantion-200">
+                    <div className="font-bold text-lg">
+                      #trending {i + 1}
+                    </div>
+                    <div className="text-sm text-neutral-400">30.7k</div>
+                  </div>
+                ))
+              }
+            </div>
+
+          </div>
+          <div className="flex flex-col rounded-xl bg-neutral-900 my-4">
+            <h3 className="font-bold text-xl my-2 px-4">Who to follow</h3>
+            <div>
+              {
+                Array.from({ length: 5 }).map((_, i) => (
+                  <div key={i} className="hover:bg-white/10 p-4 flex justify-between items-center rounded-xl transition durantion-200">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-10 h-10 bg-neutral-600 rounded-full flex-none"></div>
+                      <div className="flex flex-col">
+                        <div className="font-bold text-white">Other User</div>
+                        <div className="text-gray-500 text-xs">@otheruser1232</div>
+                      </div>
+                    </div>
+                    <div className="">
+                      <button className="rounded-full px-4 py-2 bg-white text-neutral-950">
+                        Follow
+                      </button>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+
+          </div>
         </section>
       </div >
     </div >
